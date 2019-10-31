@@ -53,4 +53,3 @@ Theme settings - Colors - Footer
   Footer links hover color
 
 Remember that is only a beta version.. it does not include sass files and rebuild function, it just add more CSS on top of the one used in theme, mostly without "!important" needed.
-
