@@ -311,10 +311,8 @@ class thememaster extends Module
             Configuration::updateValue($key, $values[$key], $htmlAllowed);
         }
 		
-	foreach ($this->getOptionFieldsFooter() as $key => $field) {
-				
+	foreach ($this->getOptionFieldsFooter() as $key => $field) {			
             $htmlAllowed = isset($field['html']) && $field['html'];
-
             if ($field['type'] == 'textareaLang') {
                 $values[$key] = [];
                 foreach ($langIds as $idLang) {
@@ -329,7 +327,6 @@ class thememaster extends Module
                 if (isset($field['cast']) && $field['cast'] && in_array($field['cast'], $castFunctions)) {
                     $value = call_user_func($field['cast'], $value);
                 }
-
                 $values[$key] = $value;	
             }
             Configuration::updateValue($key, $values[$key], $htmlAllowed);
@@ -337,42 +334,39 @@ class thememaster extends Module
 		
 	foreach ($this->getOptionFieldsColors() as $key => $field) {	
             $htmlAllowed = isset($field['html']) && $field['html'];
-			$value = Tools::getValue($key);
+	    $value = Tools::getValue($key);
             if (isset($field['cast']) && $field['cast'] && in_array($field['cast'], $castFunctions)) {
-				$value = call_user_func($field['cast'], $value);
+		$value = call_user_func($field['cast'], $value);
             }
             $values[$key] = $value;	
             Configuration::updateValue($key, $values[$key], $htmlAllowed);	
-	
 	}
 		
 	foreach ($this->getOptionFieldsHeaderColors() as $key => $field) {	
             $htmlAllowed = isset($field['html']) && $field['html'];
-			$value = Tools::getValue($key);
+	    $value = Tools::getValue($key);
             if (isset($field['cast']) && $field['cast'] && in_array($field['cast'], $castFunctions)) {
-				$value = call_user_func($field['cast'], $value);
+		$value = call_user_func($field['cast'], $value);
             }
             $values[$key] = $value;	
-            Configuration::updateValue($key, $values[$key], $htmlAllowed);				
-			
+            Configuration::updateValue($key, $values[$key], $htmlAllowed);					
 	}
 		
 	foreach ($this->getOptionFieldsContentColors() as $key => $field) {	
             $htmlAllowed = isset($field['html']) && $field['html'];
-			$value = Tools::getValue($key);
+	    $value = Tools::getValue($key);
             if (isset($field['cast']) && $field['cast'] && in_array($field['cast'], $castFunctions)) {
-				$value = call_user_func($field['cast'], $value);
+		$value = call_user_func($field['cast'], $value);
             }
             $values[$key] = $value;	
-            Configuration::updateValue($key, $values[$key], $htmlAllowed);		
-						
+            Configuration::updateValue($key, $values[$key], $htmlAllowed);						
 	}
 		
 	foreach ($this->getOptionFieldsFooterColors() as $key => $field) {	
             $htmlAllowed = isset($field['html']) && $field['html'];
-			$value = Tools::getValue($key);
+	    $value = Tools::getValue($key);
             if (isset($field['cast']) && $field['cast'] && in_array($field['cast'], $castFunctions)) {
-				$value = call_user_func($field['cast'], $value);
+		$value = call_user_func($field['cast'], $value);
             }
             $values[$key] = $value;	
             Configuration::updateValue($key, $values[$key], $htmlAllowed);	
@@ -398,22 +392,22 @@ class thememaster extends Module
 	$footerlinkhovercolor =	Configuration::get('TM_CFG_LINKHOVER_FOOTER_COLOR');		
 	
 /* Write a CSS file to modify colors */
-$css  .= 'body { background-color:'.$backgroundbodycolor.'; }	
-.navbar.navbar-default { background-color:'.$backgroundnavbarcolor.'; }		
-#header, #header-blocks { background-color:'.$backgroundheadercolor.'; }	
-.top_column_wrapper, #columns { background-color:'.$backgroundcontentcolor.'; }
-#footer { background-color:'.$backgroundfootercolor.'; }
-#footer, #copyright-footer { color:'.$textfootercolor.'; }
-#footer .footer-title, #footer .title_block { color:'.$footertitlecolor.'; }
-#footer a { color:'.$footerlinkcolor.'; }
-#footer a:hover { color:'.$footerlinkhovercolor.'; }
+	$css  .= 'body {background-color:'.$backgroundbodycolor.';} 
+.navbar.navbar-default {background-color:'.$backgroundnavbarcolor.';}		
+#header, #header-blocks {background-color:'.$backgroundheadercolor.';}	
+.top_column_wrapper, #columns {background-color:'.$backgroundcontentcolor.';}
+#footer {background-color:'.$backgroundfootercolor.';}
+#footer, #copyright-footer { color:'.$textfootercolor.';}
+#footer .footer-title, #footer .title_block { color:'.$footertitlecolor.';}
+#footer a {color:'.$footerlinkcolor.';}
+#footer a:hover {color:'.$footerlinkhovercolor.';}
 ';
 
 	/* Adding more Css code for Slogan */
 	$sloganbackgroundcolor = Configuration::get('TM_CFG_BACKGROUND_SLOGAN_COLOR');
 	$slogancontentcolor = Configuration::get('TM_CFG_SLOGAN_CONTENT_COLOR');	
-	$css .= '#slogan { background: '.$sloganbackgroundcolor.'}';
-	$css .= '#slogan p { color: '.$slogancontentcolor.'; padding: 5px 15px 7px;	margin-bottom: 0px; ';
+	$css .= '#slogan {background: '.$sloganbackgroundcolor.';}
+#slogan p {color: '.$slogancontentcolor.'; padding: 5px 15px 7px; margin-bottom: 0px; ';
 	$sloganalign = Configuration::get('TM_CFG_SLOGAN_ALIGN');	
 	if ($sloganalign == '0') $css .= 'text-align: left;';
 	if ($sloganalign == '1') $css .= 'text-align: center;';
@@ -424,11 +418,10 @@ $css  .= 'body { background-color:'.$backgroundbodycolor.'; }
 	elseif ($slogancontentweight == '2') $css .= 'font-weight: 700;';
 	elseif ($slogancontentweight == '3') $css .= 'font-weight: 900;';
 	$css .= '}
-	';
+';
 
 	/* Adding more css for Home text */
-	$css .= '#hometext { text-align: center; padding: 15px; margin: 30px 0 20px; font-size: 150%; }
-	';
+	$css .= '#hometext { text-align: center; padding: 15px; margin: 30px 0 20px; font-size: 150%; }';
 						
 	@chmod( '../modules/thememaster/views/css/colors-'.$this->context->shop->id.'.css',0777);
         $xml2 = fopen('../modules/thememaster/views/css/colors-'.$this->context->shop->id.'.css','w');
