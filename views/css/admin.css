@@ -1,0 +1,73 @@
+.thememaster .nav-tabs {
+  border-bottom: 0;
+  float: left;
+  width: 100%;
+}
+
+.thememaster > .sidebar {
+	margin-right: -10px;
+	margin-top: 32px;
+}
+
+.thememaster .nav-tabs > li {
+  float: none;
+}
+.thememaster .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+  margin-right: -1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  outline: 0;
+}
+
+.thememaster .nav-tabs > li > a.active {
+  background-color: #fff;
+}
+
+.thememaster .nav-tabs > li > a:hover,
+.thememaster .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee!important;
+}
+.thememaster .nav-tabs .active > a,
+.thememaster .nav-tabs .active > a:hover,
+.thememaster .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd!important;
+  *border-right-color: #ffffff;
+}
+
+#content.bootstrap .panel {
+	border-color:#eee;
+}
+
+#configuration_fieldset_3 {
+	margin-bottom: 0 !important;
+	border-bottom-right-radius: 0!important;
+	border-bottom-left-radius: 0!important;
+}
+
+#configuration_fieldset_4, #configuration_fieldset_5, #configuration_fieldset_6 {
+	margin-bottom: 0 !important;
+	border-radius: 0 !important;
+	border-top: 1px solid #fff !important;
+}
+
+#configuration_fieldset_3 .panel-heading, #configuration_fieldset_4 .panel-heading, #configuration_fieldset_5 .panel-heading, #configuration_fieldset_6 .panel-heading {
+	background-color: #333;
+	color: #eee !important;
+	display: inline;
+	padding: 5px 15px 5px 15px !important;
+	position: relative;
+	top: -20px;
+}
+
+.form-group div[id^="conf_id_"] p.radio {
+	display: inline-block;
+	margin-right: 25px;
+}
+
+.bootstrap .radio input[type="radio"], .bootstrap .radio-inline input[type="radio"], .bootstrap .checkbox input[type="checkbox"], .bootstrap .checkbox-inline input[type="checkbox"] {
+	margin-left: -17px;
+}

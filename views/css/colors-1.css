@@ -1,0 +1,12 @@
+body { background-color:#ffffff; }	
+.navbar.navbar-default { background-color:#f4f4f4; }		
+#header, #header-blocks { background-color:#ffffff; }	
+.top_column_wrapper, #columns { background-color:#ffffff; }
+#footer { background-color:#121212; }
+#footer, #copyright-footer { color:#c8c8c8; }
+#footer .footer-title, #footer .title_block { color:#ffffff; }
+#footer a { color:#c8c8c8; }
+#footer a:hover { color:#ff6f61; }
+#slogan { background: #ffffff}#slogan p { color: #333333; padding: 5px 15px 7px;	margin-bottom: 0px; text-align: right;font-weight: 900;}
+		#hometext { text-align: center; padding: 15px; margin: 30px 0 20px; font-size: 150%; }
+		
