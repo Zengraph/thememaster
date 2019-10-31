@@ -8,18 +8,18 @@ For Now it does include :
 
 4 Tabs : General - Header - Footer - Colors
 
-General
+- General
 
 Home page content
 Container full width mode
 
-Header
+- Header
 
 Header text in top of page
 Header text font weight (light, normal, bold, bolder)
 Header text alignment in top of page (left align, centered, right align)
 
-Footer
+- Footer
 
 Show blocknewsletter footer block : Yes / No
 Show blockcategories footer block : Yes / No
@@ -27,7 +27,7 @@ Show blockcms footer block : Yes / No
 Show myaccount footer block : Yes / No
 Copyright footer text:  textarea
 
-Colors
+- Colors
 
 Theme settings - Colors - General
 
