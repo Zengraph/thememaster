@@ -21,7 +21,7 @@ Header text alignment in top of page (left align, centered, right align)
 
 - Footer
 
-Show blocknewsletter footer block : Yes / No
+Show blocknewsletter footer block : Yes / No 
 Show blockcategories footer block : Yes / No
 Show blockcms footer block : Yes / No
 Show myaccount footer block : Yes / No
