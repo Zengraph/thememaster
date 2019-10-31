@@ -236,7 +236,7 @@ class thememaster extends Module
 	    '5' => [
                 'title'   => $this->l('Theme settings - Colors - Content'),
                 'fields'  => $this->getOptionFieldsContentColors(),
-				'name'    => 'contentcolors',
+		'name'    => 'contentcolors',
             ],
 	    '6' => [
                 'title'   => $this->l('Theme settings - Colors - Footer'),
