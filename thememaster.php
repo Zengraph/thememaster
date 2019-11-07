@@ -280,7 +280,8 @@ class thememaster extends Module
                     }
                     $values[$key][$idLang] = $value;
                 }
-            } else {
+            }			
+			else {
                 $value = Tools::getValue($key);
                 if (isset($field['cast']) && $field['cast'] && in_array($field['cast'], $castFunctions)) {
                     $value = call_user_func($field['cast'], $value);
@@ -381,10 +382,20 @@ class thememaster extends Module
 		// Start to fill CSS file 
 		$css = '';
 		
-		if ($values['TM_CONTAINERFULL']) {$css .='.container { width: calc(100% - 30px); }
-#columns.container { width: 100%; }
-';} 		
-		
+		//check for Fonts Google to setup
+		if ($values['TM_GFONT_BODY']) {
+			$myfont = Configuration::get('TM_GFONT_BODY');
+			$gfont = explode(",", $myfont, 2);
+			$gfont = str_replace('\'','',$gfont[0]);
+			$css .='@import url(\'https://fonts.googleapis.com/css?family='.$gfont.'&display=swap\');	
+body { font-family: '.$myfont.'; }
+';
+		}
+
+		if ($values['TM_CONTAINERFULL']) {
+			$css .='.container { width: calc(100% - 30px); }
+';
+		} 			
 		$backgroundbodycolor = Configuration::get('TM_BACKGROUND_BODY_COLOR');
 		$backgroundheadercolor = Configuration::get('TM_BACKGROUND_SLOGAN_COLOR');
 		$backgroundheadercolor = Configuration::get('TM_SLOGAN_CONTENT_COLOR');		
@@ -424,12 +435,11 @@ $css  .= 'body { background-color:'.$backgroundbodycolor.'; }
 		elseif ($slogancontentweight == '2') $css .= 'font-weight: 700;';
 		elseif ($slogancontentweight == '3') $css .= 'font-weight: 900;';
 
-		$css .= '}
-		';
+		$css .= '}';
 
 		/* Adding more css for Home text */
-		$css .= '#hometext { text-align: center; padding: 15px; margin: 30px 0 20px; font-size: 150%; }
-		';
+		$css .= '
+#hometext { text-align: center; padding: 15px; margin: 30px 0 20px; font-size: 150%; }';
 		
 		/* Adding more css for Header Sticky Menu on Scroll */
 		if ($values['TM_STICKY_MENU']) {
@@ -459,7 +469,7 @@ $css .= '
 ';
 		}
 		/* enf of sticky menu */
-						
+								
 		@chmod( '../modules/thememaster/views/css/colors-'.$this->context->shop->id.'.css',0777);
         $xml = fopen('../modules/thememaster/views/css/colors-'.$this->context->shop->id.'.css','w');
         fwrite($xml,$css);
@@ -521,7 +531,19 @@ $( document ).ready(function() {
             $this->unhookModule('blockmyaccountfooter', 'footer');
         }
     }
-
+	
+	protected function getGooglefonts() {
+		$json = file_get_contents('../modules/thememaster/fonts.json');
+        $fonts_decode = json_decode( $json, TRUE );
+		$i=0;
+        foreach ( $fonts_decode['items'] as $key => $value ) {
+            $this->list_fonts[$i]['name'] = $value['family'];
+			$this->list_fonts[$i]['value'] = '\''.str_replace(' ','+',$value['family']).'\', '.$value['category'];
+			$i++;
+        }
+		return($this->list_fonts); 
+	}
+	
     /**
      * Return HelperOptions fields that are used in module configuration form.
      *
@@ -550,6 +572,15 @@ $( document ).ready(function() {
                 'desc'  => $this->l('Make the header menu fixed on scroll.'),
                 'cast'  => 'boolval',
                 'type'  => 'bool',
+            ],
+			'TM_GFONT_BODY' => [
+                'title' => $this->l('Choose your Google Font'),
+                'desc'  => $this->l('Select your font for your site in the most populars Google fonts.'),
+				'name' => 'TM_GFONT_BODY',
+				'cast' => 'strval',
+				'type' => 'select',
+				'list' => $this->getGooglefonts(),	
+				'identifier' => 'value',
             ],
 		];
     } 
