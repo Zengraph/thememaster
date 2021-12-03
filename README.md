@@ -1,14 +1,14 @@
 # thememaster
 
-It's a module that target the Niara theme for custom settings.
+It's a module that target the cizero theme for custom settings. (can be used on Niara too)
 
 Please test it, report bugs or any ideas to improve it, together we can make a great tool for everybody that can manage from BO major changes in theme settings.
 
 For Now it does include :
 
-4 Tabs : General - Header - Footer - Colors
+4 Tabs : General - Header - Footer - Colors - Order
 
-Remember that is only a beta version.. it does not include sass files and rebuild function, it just add more CSS on top of the one used in theme, mostly without "!important" needed.
+What module does : It add more CSS on top of the one used in theme, and some JS if needed too.
 
 Related to this thread in Thirtybees Official Forum :
-https://forum.thirtybees.com/topic/3630-theme-master-module-~%C2%A4~with-a-little-help-from-my-friends~%C2%A4~/
+https://forum.thirtybees.com/topic/5252-cisero-bootstrap-5-free-new-theme/?tab=comments#comment-41980
