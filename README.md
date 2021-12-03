@@ -1,4 +1,4 @@
-# thememaster
+# Thememaster
 
 It's a module that target the cizero theme for custom settings. (can be used on Niara too)
 Please test it, report bugs or any ideas to improve it, together we can make a great tool for everybody that can manage from BO major changes in theme settings.
