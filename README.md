@@ -43,6 +43,7 @@ COLORS
   - Top page Slogan background color
   - Top page under menu text slider color
   - Top page under menu text slider background color
+  - Top page under menu opacity (slider can be seen with tranparent effet on top onyl for desktop)
   - Header Navbar background color
   - Header background color
 
